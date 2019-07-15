@@ -8,6 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.assets.unknown_asset_fallback = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -34,6 +35,10 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+  
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { :host => 'https://d272cd55163241a68cb7aabdacc95dd4.vfs.cloud9.us-east-2.amazonaws.com'}
+  
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
